@@ -15,14 +15,14 @@ static void static_sayhello(){
 
 
 // Called when the library is loaded and before dlopen() returns
-static void __attribute__ ((constructor)) _load(void){
+__attribute__ ((constructor)) static void _load(void){
     // Add initialization code…
     std::cout<<"module wars loaded";
 }
  
 // Called when the library is unloaded and before dlclose()
 // returns
-static void  __attribute__ ((destructor)) _unload(void){
+__attribute__ ((destructor)) static void _unload(void){
     // Add clean-up code…
     std::cout<<"module wanna unloaded";
 }
